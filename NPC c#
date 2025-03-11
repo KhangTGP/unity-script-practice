@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class variable : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public int NPChealth = 5;
+    public int NPClevel = 3;
+    public float NPCspeed = 1.2f;
+    void Start()
+    {
+        NPChealth += NPClevel;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        print("time: " + Time.deltaTime);
+        Vector3 newPosition = transform.position;
+        newPosition.z += NPCspeed*Time.deltaTime;
+        transform.position = newPosition;
